@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
-using Dating_API.Extensions;
 
-namespace Dating_API.Entities
+namespace Dating_API.DTOs
 {
-    public class AppUser
+    public class MemberDto
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
-
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public string Username { get; set; }
+        public string PhotoUrl { get; set; }
+        public int Age {get; set;}
         public DateTime DateOfBirth { get; set; }
         public string KnownAs { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
@@ -21,11 +19,6 @@ namespace Dating_API.Entities
         public string Intrests { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-        public ICollection<Photo> Photos { get; set; }
-
-        // public int GetAge()
-        // {
-        //     return DateOfBirth.CalculateAge();
-        // }
+        public ICollection<PhotoDto> Photos { get; set; }
     }
 }
